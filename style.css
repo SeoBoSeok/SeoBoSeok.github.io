@@ -94,6 +94,9 @@ label {
 img {
 	max-width: 100%;
 }
+.logo img {
+	max-width: 50%;
+}
 #pre-status,
 .preload-placeholder {
 	background-image: url(assets/images/preloader.gif);
@@ -257,7 +260,7 @@ header .st-navbar ul li a {
 }
 
 .carousel-caption h3 {
-	font-size: 5.2em;
+	font-size: 5em;
 	font-weight: 600;
 	margin-top: 0;
 	line-height: 1em;
@@ -292,7 +295,7 @@ header .st-navbar ul li a {
 	}
 
 	.carousel-caption h3 {
-		font-size: 5.2em;
+		font-size: 5em;
 		font-weight: 600;
 		margin-top: 0;
 		line-height: 1em;
