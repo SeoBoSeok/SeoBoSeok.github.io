@@ -561,6 +561,10 @@ header .st-navbar ul li a {
 	padding-right: 0px;
 }
 
+#about-us ul li {
+	list-style: none;
+}
+
 .office-carousel-left,
 .office-carousel-right {
 	background-color: #f0f0f0;
