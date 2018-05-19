@@ -561,8 +561,9 @@ header .st-navbar ul li a {
 	padding-right: 0px;
 }
 
-#about-us ul li {
+#about-us ul {
 	list-style: none;
+	padding-left: 0px;
 }
 
 .office-carousel-left,
