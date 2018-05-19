@@ -178,4 +178,8 @@
         $(".post-video").fitVids();
     }());
 
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+
 });
