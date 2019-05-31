@@ -137,7 +137,7 @@
     }());
     (function () {
         $('#testimonial-carousel').carousel({
-            interval: 3500
+            interval: 7000
         })
     }());
     // -------------------------------------------------------------
