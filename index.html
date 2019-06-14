@@ -537,7 +537,7 @@ You can speak real English only if you understand their culture.">실제 원어�
                 <!-- </p> -->
             </div>
             <div class="col-md-8">
-                <form action="" class="contact-form" name="contact-form" id="contact-form" method="post">
+                <form action="http://ec2-13-125-108-23.ap-northeast-2.compute.amazonaws.com:8080/inbox" class="contact-form" name="contact-form" method="post">
                 <input type="hidden" name="_language" value="ko" />
                     <div class="row">
                         <div class="col-md-6">
@@ -555,7 +555,7 @@ You can speak real English only if you understand their culture.">실제 원어�
                         <div class="col-md-12">
                             <textarea name="message" required="required" cols="30" rows="7"
                                       placeholder="Message*"></textarea>
-                            <button type="button" name="submit" class="btn btn-send" onclick="formSubmit()">문의하기</button>
+                            <input type="submit" name="submit" class="btn btn-send">
                         </div>
                     </div>
                 </form>
@@ -603,23 +603,5 @@ You can speak real English only if you understand their culture.">실제 원어�
 <script src="assets/js/jquery.isotope.min.js"></script><!-- isotope -->
 <script src="assets/js/jquery.magnific-popup.min.js"></script><!-- magnific-popup -->
 <script src="assets/js/scripts.js"></script><!-- Scripts -->
-<script>
-function formSubmit() {
-    var params = jQuery("#contact-form").serialize(); // serialize() : 입력된 모든Element(을)를 문자열의 데이터에 serialize 한다.
-    jQuery.ajax({
-        url: 'http://ec2-13-125-108-23.ap-northeast-2.compute.amazonaws.com:8080/inbox',
-        type: 'POST',
-        data:params,
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8', 
-        dataType: 'html',
-        success: function (result) {
-            if (result){
-                // 데이타 성공일때 이벤트 작성
-                alert('문의해주셔서 감사합니다. 빠른 시간안에 답변 드리겠습니다.');
-            }
-        }
-    });
-}
-</script>
 </body>
 </html>
