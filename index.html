@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72"
           href="assets/images/icon/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/icon/apple-touch-icon-57-precomposed.png">
-    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!-- <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script> -->
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -592,6 +592,28 @@ You can speak real English only if you understand their culture.">실제 원어�
     </ul>
 </div>
 <!-- JS -->
+<div class="dim-layer">
+    <div class="dimBg"></div>
+    <div id="layer2" class="pop-layer">
+        <div class="pop-container">
+            <div class="pop-conts">
+                <!--content //--> 
+                <p class="ctxt mb20">안녕하세요. PAM ENGLISH입니다.<br>
+                    저희 수업에 대해 많은 분들에게 알리고자 무료 스터디 참여 이벤트를 진행하고 있습니다.<br>
+                    무료로 저희 서비스를 이용하셔서 기존과는 다른 영어회화 수업을 체험해보실 수 있습니다.<br>
+                    아래 간단한 참여 신청서만 작성해주시면 됩니다 :)
+                    <br /><br />
+                    <a href="https://forms.gle/4bL1A3QMzA28vrFW9" target=“_blank”><button type="button">참여 신청하기</button></a>
+                </p>
+
+                <div class="btn-r">
+                    <a href="#" class="btn-layerClose">Close</a>
+                </div>
+                <!--// content-->
+            </div>
+        </div>
+    </div>
+</div>
 <script src="assets/js/jquery.min.js"></script><!-- jQuery -->
 <script src="assets/js/popper.min.js"></script><!-- popper -->
 <script src="assets/js/bootstrap.min.js"></script><!-- Bootstrap -->
@@ -603,5 +625,42 @@ You can speak real English only if you understand their culture.">실제 원어�
 <script src="assets/js/jquery.isotope.min.js"></script><!-- isotope -->
 <script src="assets/js/jquery.magnific-popup.min.js"></script><!-- magnific-popup -->
 <script src="assets/js/scripts.js"></script><!-- Scripts -->
+<script>
+    $(document).ready(function(){
+        layer_popup('#layer2');
+    });
+    function layer_popup(el){
+
+        var $el = $(el);        //레이어의 id를 $el 변수에 저장
+        var isDim = $el.prev().hasClass('dimBg');   //dimmed 레이어를 감지하기 위한 boolean 변수
+
+        isDim ? $('.dim-layer').fadeIn() : $el.fadeIn();
+
+        var $elWidth = ~~($el.outerWidth()),
+            $elHeight = ~~($el.outerHeight()),
+            docWidth = $(document).width(),
+            docHeight = $(document).height();
+
+        // 화면의 중앙에 레이어를 띄운다.
+        if ($elHeight < docHeight || $elWidth < docWidth) {
+            $el.css({
+                marginTop: -$elHeight /2,
+                marginLeft: -$elWidth/2
+            })
+        } else {
+            $el.css({top: 0, left: 0});
+        }
+
+        $el.find('a.btn-layerClose').click(function(){
+            isDim ? $('.dim-layer').fadeOut() : $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+            return false;
+        });
+
+        $('.layer .dimBg').click(function(){
+            $('.dim-layer').fadeOut();
+            return false;
+        });
+    }
+</script>
 </body>
 </html>
